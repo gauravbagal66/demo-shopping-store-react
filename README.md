@@ -14,7 +14,7 @@ A fully responsive and SEO-optimized **Product Listing Page** built using **Next
 - ✅ Sidebar Filters
 - ✅ Wishlist Button
 - ✅ Google Sign-In via `next-auth`
-- ✅ Vercel-Ready Deployment
+- ✅ Render Deployment
 
 ---
 
