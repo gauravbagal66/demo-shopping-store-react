@@ -354,6 +354,12 @@ a {
     height: auto;
     padding-right: 10px;
 }
+
+#gpay{
+  color: black;
+  background-color: white;
+  padding: 0px 5px;
+}
 #us
 {
   margin-top: 0px;
@@ -399,6 +405,52 @@ a {
   vertical-align: middle;
 }
 
+
+
+
+.sort-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.sort-button {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+
+
+
+
+
+
+
+
 /* ----------- MERGED MEDIA QUERIES ----------- */
 @media (max-width: 768px) {
   .header {
@@ -428,6 +480,8 @@ a {
     width: 30px;
     height: auto;
   }
+
+
 
   .nav {
     display: none;
