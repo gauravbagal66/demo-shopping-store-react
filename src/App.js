@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGooglePay, faCcMastercard, faCcPaypal, faCcAmex, faApplePay, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFlagUsa } from '@fortawesome/free-solid-svg-icons';
 
+import logo from './assets/logo.png';
+import usd from './assets/usa.png';
 
 export async function getServerSideProps() {
   const res = await fetch("https://fakestoreapi.com/products");
@@ -37,17 +39,18 @@ function App() {
         <title>Discover Our Products</title>
       </Head> */}
 
-      <button
-        className="hamburger"
+     
+      <header className="header">
+        <div className="top-row">
+          <div className="spacer"></div>
+           <button
+        className="hamburger" href="/"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
         ☰
       </button>
-      <header className="header">
-        <div className="top-row">
-          <div className="spacer"></div>
           <div className="logo">
-            <img src="/images/logo1.png" alt="Logo" className="logo-icon" />
+            <img src={logo} alt="Logo"  id='logoo' />
           </div>
 
           <div className="logo-text">LOGO</div>
@@ -61,16 +64,16 @@ function App() {
           </div>
         </div>
         <nav className="nav">
-          <a href="#">SHOP</a>
-          <a href="#">SKILLS</a>
-          <a href="#">STORIES</a>
-          <a href="#">ABOUT</a>
-          <a href="#">CONTACT US</a>
+          <a href="/shop">SHOP</a>
+          <a href="/skills">SKILLS</a>
+          <a href="/stories">STORIES</a>
+          <a href="/about">ABOUT</a>
+          <a href="/contact">CONTACT US</a>
         </nav>
       </header>
 
       <div className="below-nav-links">
-        <a href="#">HOME</a> | <a href="#">SHOP</a>
+        <a href="/home">HOME</a> | <a href="/shop">SHOP</a>
       </div>
 
       <main className="container">
@@ -124,10 +127,9 @@ function App() {
             <p>+44 221 133 5360</p>
             <p>customercare@mettamuse.com</p>
             <h3>CURRENCY</h3>
-            <p>
-              <FontAwesomeIcon icon={faFlagUsa} title="USD" />
-              USD
-            </p>
+            <p id='us'>
+              <img src={usd} alt="usd"  id='usd' />USD
+              </p>
             <small>
               Transactions will be completed in Euros and a currency reference
               is available on hover.

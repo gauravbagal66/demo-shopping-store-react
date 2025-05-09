@@ -5,22 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-
-
-/* Reset & base styles */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  color: #333;
-  background-color: #fff;
-  line-height: 1.6;
 }
 
 a {
@@ -34,13 +26,11 @@ a {
   padding: 0 20px;
 }
 
-/* Header Container */
 .header {
   padding: 20px 0;
   border-bottom: 1px solid #e0e0e0;
 }
 
-/* Top row: logo in center, icons on right */
 .top-row {
   display: flex;
   justify-content: space-between;
@@ -48,19 +38,9 @@ a {
   position: relative;
 }
 
-/* Spacer div (same width as icons) to center logo */
 .spacer {
-  width: 150px; /* Approximate width of icons container */
+  width: 150px;
 }
-
-/* Centered logo */
-/* .logo {
-  font-size: 1.8em;
-  font-weight: 700;
-  text-align: center;
-  flex-grow: 1;
-} */
-
 
 .logo {
   display: flex;
@@ -68,41 +48,47 @@ a {
   gap: 10px;
   font-size: 1.8em;
   font-weight: 700;
-  position: absolute;  /* Positioning the logo at the left corner */
-  left: 20px;          /* Distance from the left edge */
+  position: absolute;
+  left: 20px;
 }
-
-
 
 .logo-text {
   font-size: 2.5em;
   font-weight: 700;
   text-align: center;
+  cursor: pointer;
 }
 
-
-/* Icons aligned right */
 .icons {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 1.2em;
   font-weight: 700;
+  cursor: pointer;
 }
 
-/* Language dropdown */
 .icons .lang {
   font-size: 0.8em;
   margin-left: 8px;
   font-weight: 700;
 }
 
-/* Navigation bar below top row */
 .nav {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 10px;
+}
+
+
+.below-nav-links{
+  display: none;
+}
+
+.hamburger
+{
+  display: none;
 }
 
 .nav a {
@@ -114,7 +100,6 @@ a {
   padding-bottom: 4px;
 }
 
-/* Pseudo-element underline */
 .nav a::after {
   content: '';
   position: absolute;
@@ -122,19 +107,15 @@ a {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: rgba(0, 0, 0, 0.4); /* light black */
+  background-color: rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
-/* On hover: underline expands from center */
 .nav a:hover::after {
   width: 100%;
 }
 
-
-
-/* Hero Section */
 .intro {
   text-align: center;
   margin: 50px 0;
@@ -153,7 +134,6 @@ a {
   font-size: 1em;
 }
 
-/* Filter bar */
 .filter-bar {
   display: flex;
   justify-content: space-between;
@@ -188,9 +168,9 @@ a {
 
 .sort {
   font-weight: 600;
+  cursor: pointer;
 }
 
-/* Product grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -205,6 +185,7 @@ a {
   text-align: center;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   background-color: #f9f8f8;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -220,8 +201,9 @@ a {
 }
 
 .card h2 {
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-transform: uppercase;
   margin: 10px 0;
 }
 
@@ -230,25 +212,24 @@ a {
   color: #444;
   margin-bottom: 8px;
 }
+
 .card .signin-message {
   font-size: 0.9em;
   color: #666;
-  white-space: nowrap;           /* Prevents line breaks */
-  display: inline-block;         /* Keeps it inline */
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .card .signin-message a {
   color: #007bff;
   text-decoration: underline;
-  white-space: nowrap;           /* Prevents link from wrapping */
+  white-space: nowrap;
 }
 
 .card .signin-message a:hover {
   text-decoration: none;
 }
 
-
-/* Footer styles */
 .footer {
   background-color: #000;
   color: #fff;
@@ -316,7 +297,7 @@ a {
   color: #aaa;
 }
 
-.contact p{
+.contact p {
   opacity: 0.7;
 }
 
@@ -353,7 +334,6 @@ a {
   display: inline-block;
   margin-right: 10px;
   font-size: 1.2em;
-  
 }
 
 .footer-bottom {
@@ -362,92 +342,22 @@ a {
   color: #aaa;
 }
 
-/* Mobile & tablet responsiveness */
-@media (max-width: 768px) {
-  /* Header: center logo, hide nav */
-  .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-  }
-  .logo-text
-  {
-    margin-left: 50%;
-  }
+#logoo {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+}
 
-  .logo {
-    margin-bottom: 10px;
-  }
-
-  .nav {
-    display: none; /* can replace with hamburger later */
-    justify-content: center;
-  }
-
-  .icons {
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  /* Filter bar */
-  .filter-bar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    font-size: 1em;
-  }
-
-  .filter-bar .filter-actions {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  /* Product grid: 2 per row */
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .card img {
+#usd
+{
+     width: 25px;
     height: auto;
-    aspect-ratio: 1 / 1;
-  }
-
-  /* Footer stack */
-  .footer-top,
-  .footer-links {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .newsletter-form input,
-  .newsletter-form button {
-    width: 100%;
-  }
+    padding-right: 10px;
 }
-
-@media (max-width: 480px) {
-  /* Product grid: 1 per row */
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-
-  .header {
-    padding: 10px;
-  }
+#us
+{
+  margin-top: 0px;
 }
-
-
-
 
 .menu-icon {
   display: none;
@@ -462,14 +372,34 @@ a {
   text-transform: uppercase;
 }
 
-.card h2 {
-  font-size: 0.9em;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 10px 0;
+.payment-icons .fa-google-pay {
+  color: #5f6368;
 }
 
-/* For mobile */
+.payment-icons .fa-cc-mastercard {
+  color: #eb001b;
+}
+
+.payment-icons .fa-cc-paypal {
+  color: #003087;
+}
+
+.payment-icons .fa-cc-amex {
+  color: #2e77bb;
+}
+
+.payment-icons .fa-apple-pay {
+  color: #000;
+}
+
+.payment-icons svg,
+.payment-icons span {
+  margin-right: 12px;
+  font-size: 2.5em;
+  vertical-align: middle;
+}
+
+/* ----------- MERGED MEDIA QUERIES ----------- */
 @media (max-width: 768px) {
   .header {
     flex-direction: row;
@@ -477,16 +407,55 @@ a {
     padding: 10px 20px;
   }
 
-  .menu-icon {
-    display: block;
+  .logo-text {
+    margin-left: 50%;
   }
 
   .logo {
     font-size: 1.2em;
     margin-left: 21px;
+    margin-bottom: 10px;
+  }
+
+  #logoo {
+    width: 50px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  #usd{
+    width: 40px;
+    height: auto;
   }
 
   .nav {
+    display: none;
+    justify-content: center;
+  }
+
+
+  .below-nav-links{
+  display: flex;
+  cursor: pointer;
+}
+
+.hamburger
+{
+  display: flex;
+  height: 40px;
+  cursor: pointer;
+}
+
+  .icons {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    gap: 10px;
+  }
+
+  .icons span:nth-child(4),
+  .icons .lang {
     display: none;
   }
 
@@ -499,9 +468,16 @@ a {
     justify-content: space-between;
     gap: 0;
     margin-bottom: 20px;
+    font-size: 1em;
   }
 
-  .show-filter, .sort {
+  .filter-bar .filter-actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .show-filter,
+  .sort {
     flex: 1;
     text-align: center;
     padding: 10px 0;
@@ -528,11 +504,38 @@ a {
     height: 150px;
     object-fit: contain;
   }
+
+  .footer-top,
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .header {
+    padding: 10px;
   }
 
   .filter-bar {
@@ -543,290 +546,4 @@ a {
   .breadcrumb {
     text-align: center;
   }
-}
-
-
-
-
-.payment-icons .fa-google-pay {
-  color: #5f6368; /* Google Pay gray */
-}
-
-.payment-icons .fa-cc-mastercard {
-  color: #eb001b; /* Mastercard red */
-}
-
-.payment-icons .fa-cc-paypal {
-  color: #003087; /* PayPal blue */
-}
-
-.payment-icons .fa-cc-amex {
-  color: #2e77bb; /* Amex blue */
-}
-
-.payment-icons .fa-apple-pay {
-  color: #000; /* Apple Pay black */
-}
-
-.payment-icons svg,
-.payment-icons span {
-  margin-right: 12px;
-  font-size: 2.5em;
-  vertical-align: middle;
-}
-/* ------------------------------------------------------------------------------------------------------------------------------------- */
-
-/* Hide specific icons on small screens */
-@media (max-width: 768px) {
-  /* Hide the 👤 icon (4th span in .icons) */
-  .icons span:nth-child(4) {
-    display: none;
-  }
-
-  /* Hide the ENG ▼ span (with .lang class) */
-  .icons .lang {
-    display: none;
-  }
-
-  /* Adjust spacing for remaining icons */
-  .icons {
-    gap: 10px; /* Slightly reduce gap for better fit */
-    justify-content: flex-end; /* Ensure remaining icons are aligned to the right */
-  }
-}
-
-@media (max-width: 480px) {
-  .icons {
-    gap: 8px; /* Further reduce gap for smaller screens */
-  }
-}
-
-
-
-
-/* Style the logo image to match the screenshot */
-.logo-icon {
-  display: block; /* Ensure the image is visible */
-  width: 24px; /* Match the size in the screenshot */
-  height: 24px;
-  object-fit: contain; /* Maintain aspect ratio */
-  background-color: transparent; /* Ensure no background interferes */
-  filter: none; /* Ensure no filters affect the black color */
-}
-
-/* Responsive adjustments for logo image */
-@media (max-width: 768px) {
-  .logo-icon {
-    width: 20px; /* Slightly smaller for tablet screens */
-    height: 20px;
-    left: 20px; /* Keep in left corner as per previous adjustments */
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-icon {
-    width: 18px; /* Even smaller for mobile screens */
-    height: 18px;
-    left: 15px; /* Adjust position for smaller padding */
-  }
-}
-
-
-/* Adjust visibility of below-nav-links */
-.below-nav-links {
-  display: none; /* Hidden by default on larger screens */
-}
-
-/* Responsive adjustments for small screens */
-@media (max-width: 768px) {
-  .below-nav-links {
-    display: flex; /* Show on small screens */
-    justify-content: flex-start;
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 5px;
-    padding-left: 20px;
-  }
-
-  .below-nav-links a {
-    color: #666;
-    text-decoration: none;
-    margin: 0 5px;
-  }
-
-  .below-nav-links a:hover {
-    text-decoration: underline;
-  }
-}
-
-@media (max-width: 480px) {
-  .below-nav-links {
-    font-size: 0.8em;
-    padding-left: 15px;
-  }
-}
-
-
-
-
-/* Default styles for dropdown (ensure content is visible on larger screens) */
-.dropdown-closed,
-.dropdown-open {
-  display: block; /* Visible by default on larger screens */
-}
-
-/* Styles for dropdown menu on small screens */
-@media (max-width: 768px) {
-  /* Style h4 as a dropdown toggle */
-  .footer-links h4 {
-    font-size: 0.9em; /* Match the font size of li elements */
-    font-weight: 400; /* Remove bold to match li styling */
-    color: #aaa; /* Match the color of li elements */
-    margin-bottom: 8px; /* Match the margin of li elements */
-    padding: 0; /* Remove extra padding */
-    text-transform: none; /* Remove uppercase to match li styling */
-    cursor: pointer; /* Indicate it's clickable */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Ensure it spans the full width */
-  }
-
-  /* Hide dropdown content by default */
-  .dropdown-closed {
-    display: none; /* Hidden when closed */
-  }
-
-  /* Show dropdown content when open */
-  .dropdown-open {
-    display: block; /* Visible when open */
-  }
-
-  /* Ensure the list items and h4 blend seamlessly */
-  .footer-links div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-links ul {
-    margin-top: 0; /* Remove top margin to blend with h4 */
-  }
-
-  .footer-links li {
-    margin-bottom: 8px; /* Consistent spacing */
-  }
-
-  /* Adjust social-icons to align with the list style */
-  .social-icons {
-    margin-bottom: 8px; /* Match the spacing of li elements */
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-links h4 {
-    font-size: 0.8em; /* Match smaller font size of li elements */
-  }
-
-  .footer-links li {
-    font-size: 0.8em; /* Consistent with previous adjustments */
-  }
-
-  
-}
-
-
-
-.hamburger {
-  display: none;
-  font-size: 1.8em;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    z-index: 999;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px 0;
-    background-color: #f8f8f8;
-    text-align: center;
-  }
-
-  .nav.open {
-    display: flex;
-  }
-
-  .top-row {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-
-.footer-divider {
-  border: none;
-  height: 1px;
-  background-color: white;
-  margin: 20px 0;
-  opacity: 1; 
-  width: 95%;
-  margin-left: 2%;
-}
-
-
-.currency-flag {
-  width: 20px;
-  height: auto;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-
-
-.filter-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
-  flex-wrap: wrap; /* optional for responsiveness */
-}
-
-.filter-left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.items-count {
-  font-weight: 600;
-}
-
-.show-filter {
-  padding: 6px 12px;
-  
-  color: black;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  opacity: 0.7;
-  gap: 6px; /* spacing between > and text */
-}
-
-
-.sort {
-  font-weight: 600;
 }
